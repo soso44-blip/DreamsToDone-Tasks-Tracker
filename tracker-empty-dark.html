@@ -1221,22 +1221,6 @@ function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").repl
 
 // ── DOUBLE-TAP DETECTION (mobile) ─────────────────────────────────────────────
 let tapTimer=null, lastTapId=null, lastTapTime=0;
-function handleTapStart(id,e){
-  // prevent interfering with button taps
-  if(e.target.closest("button"))return;
-  const now=Date.now();
-  if(lastTapId===id&&now-lastTapTime<350){
-    // double tap!
-    clearTimeout(tapTimer);
-    lastTapId=null;lastTapTime=0;
-    completeTask(id);
-    e.preventDefault();
-  }else{
-    lastTapId=id;lastTapTime=now;
-    tapTimer=setTimeout(()=>{lastTapId=null;},400);
-  }
-}
-function handleTapEnd(e){if(e.target.closest("button"))return;}
 
 // ── COMPLETE ──────────────────────────────────────────────────────────────────
 let lastCompleted=0;
@@ -2092,46 +2076,8 @@ function closeBackupModal(){var el=document.getElementById("backupModal");if(el)
 
 
 
-// ── KEYBOARD FIX (visualViewport) ────────────────────────────────────────────
-(function(){
-  function onVPResize(){
-    var overlay=document.getElementById('addSheet');
-    if(!overlay||overlay.style.display==='none')return;
-    var vpH=window.visualViewport?window.visualViewport.height:window.innerHeight;
-    var winH=window.innerHeight;
-    var kbH=Math.max(0,winH-vpH-10);
-    overlay.style.paddingBottom=(kbH>80?kbH:0)+'px';
-  }
-  if(window.visualViewport){
-    window.visualViewport.addEventListener('resize',onVPResize);
-  }
-  document.addEventListener('focusin',function(e){
-    if(e.target.closest && e.target.closest('.add-sheet')){
-      setTimeout(function(){e.target.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
-    }
-  });
-})();
-// ── DOUBLE-TAP COMPLETE (touchend delegation) ─────────────────────────────────
-(function(){
-  var _id=null,_t=0,_timer=null;
-  document.addEventListener('touchend',function(e){
-    var card=e.target.closest&&e.target.closest('.task-card');
-    if(!card||card.classList.contains('done'))return;
-    if(e.target.closest('button,input,select,textarea,.drag-handle,.steps-area,.card-menu,.menu-btn'))return;
-    var id=card.id.replace('tc_','');
-    if(!id)return;
-    var now=Date.now();
-    if(_id===id&&now-_t<400){
-      clearTimeout(_timer);_id=null;_t=0;
-      e.preventDefault();
-      if(typeof completeTask==='function')completeTask(id);
-    }else{
-      _id=id;_t=now;
-      clearTimeout(_timer);
-      _timer=setTimeout(function(){_id=null;},500);
-    }
-  },{passive:false});
-})();
+
+
 
 // ── STREAK EMOJI ──────────────────────────────────────────────────────────────
 function getStreakEmoji(s){
@@ -2239,6 +2185,62 @@ function uncompleteTask(id){
   save();renderHeader();renderTasks();
   showToast("↩ Task moved back to active");
 }
+
+// ── KEYBOARD + SCROLL FIX ────────────────────────────────────────────────────
+(function(){
+  function onVPResize(){
+    var overlay=document.getElementById('addSheet');
+    if(!overlay||overlay.style.display==='none')return;
+    var vpH=window.visualViewport?window.visualViewport.height:window.innerHeight;
+    var kbH=Math.max(0,window.innerHeight-vpH-10);
+    overlay.style.paddingBottom=(kbH>80?kbH:0)+'px';
+  }
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',onVPResize);
+  }
+  document.addEventListener('focusin',function(e){
+    if(e.target.closest&&e.target.closest('.add-sheet')){
+      setTimeout(function(){e.target.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
+    }
+  });
+})();
+
+// ── DOUBLE-TAP TO COMPLETE (mobile) ──────────────────────────────────────────
+(function(){
+  var _id=null,_t=0,_sx=0,_sy=0,_timer=null;
+  // Record start position so we can ignore scrolls
+  document.addEventListener('touchstart',function(e){
+    var t=e.changedTouches[0];
+    _sx=t.clientX;_sy=t.clientY;
+  },{passive:true});
+  document.addEventListener('touchend',function(e){
+    var card=e.target.closest&&e.target.closest('.task-card');
+    if(!card)return;
+    // Ignore buttons and interactive children
+    if(e.target.closest('button,input,select,textarea,.drag-handle,.steps-area,.card-menu,.menu-btn'))return;
+    // Ignore if finger moved more than 12px (was a scroll, not a tap)
+    var t=e.changedTouches[0];
+    if(Math.abs(t.clientX-_sx)>12||Math.abs(t.clientY-_sy)>12)return;
+    var id=card.id.replace('tc_','');
+    if(!id)return;
+    var now=Date.now();
+    if(_id===id&&now-_t<500){
+      // Second tap within 500ms = double-tap → complete
+      clearTimeout(_timer);_id=null;_t=0;
+      e.preventDefault();
+      // Brief visual flash so user knows it registered
+      card.style.transition='opacity 0.15s';
+      card.style.opacity='0.4';
+      setTimeout(function(){card.style.opacity='';card.style.transition='';},150);
+      if(typeof completeTask==='function')completeTask(id);
+    }else{
+      // First tap — wait for second
+      _id=id;_t=now;
+      clearTimeout(_timer);
+      _timer=setTimeout(function(){_id=null;},550);
+    }
+  },{passive:false});
+})();
 </script>
 <div class="backup-modal-overlay" id="backupModal" style="display:none" onclick="if(event.target===this)closeBackupModal()"><div class="backup-modal-card"><div class="backup-modal-head"><span>💾 Your data</span><button class="backup-modal-close" onclick="closeBackupModal()">✕</button></div><p class="backup-modal-why">Tasks, XP, and progress are saved <strong>in this browser only</strong>. Clearing cache, switching browser, or changing device will erase everything.</p><p class="backup-modal-how">Save a file to your device and restore it anytime — on any device, any browser.</p><div class="backup-modal-btns"><button class="backup-modal-save" onclick="closeBackupModal();exportBackup()">⬇ Save backup</button><button class="backup-modal-restore" onclick="closeBackupModal();importBackup()">⬆ Restore</button></div><input type="file" id="restoreInput" accept=".json" style="display:none" onchange="handleRestore(this)"/></div></div>
 <div class="prestige-overlay" id="prestigeOverlay" style="display:none" onclick="dismissPrestige()"><div class="prestige-card"><div class="prestige-stars">✦ ✦ ✦</div><div class="prestige-badge" id="prestigeBadge">💎</div><div class="prestige-head">LEGEND STATUS</div><div class="prestige-sub">You conquered Level 10.</div><div class="prestige-msg">Your XP resets. Your badge is permanent.<br>The journey continues — now as a Legend.</div><div class="prestige-tap">Tap anywhere to continue</div></div></div>
