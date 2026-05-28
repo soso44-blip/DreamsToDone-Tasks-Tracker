@@ -718,15 +718,6 @@ button,input,.task-card{touch-action:manipulation}
     </div>
     <div class="survival-msg" id="survivalMsg">🌿 Survival mode — showing only short tasks. Just one. That's enough.</div>
 
-    <div class="sl">📍 Filter by location</div>
-    <div class="ctx-row">
-      <button class="ctx-btn active" data-c="any" onclick="setContext('any')">🌍 Anywhere</button>
-      <button class="ctx-btn" data-c="home" onclick="setContext('home')">🏠 At Home</button>
-      <button class="ctx-btn" data-c="work" onclick="setContext('work')">💼 At Work</button>
-      <button class="ctx-btn" data-c="out" onclick="setContext('out')">🚗 Out &amp; About</button>
-      <button class="ctx-btn" data-c="phone" onclick="setContext('phone')">📱 Phone Only</button>
-    </div>
-
     <div class="sl" style="margin-bottom:6px;margin-top:8px">🏷️ Filter by category</div>
     <div class="cat-filter-row" id="catFilterRow"></div>
 
@@ -1067,7 +1058,6 @@ function applyFilters(t,includeDone){
   if(!includeDone&&t.done)return false;
   if(t.startDate&&t.startDate>todayISO2)return false;
   if(t.endDate&&t.endDate<todayISO2)return false;
-  if(S.context!=="any"&&t.context!=="any"&&t.context!==S.context)return false;
   if(S.energy==="low"&&t.energy==="high")return false;
   if(S.energy==="low"&&t.energy==="medium")return false;
   if(S.energy==="medium"&&t.energy==="high")return false;
