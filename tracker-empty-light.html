@@ -480,37 +480,76 @@ input,select,textarea{background:var(--surf2)!important;color:var(--text)!import
 .cel-overlay{background:rgba(28,16,51,0.88)!important}
 .cel-xp,.cel-sub{color:#f0e6ff!important}
 
-/* GLOBAL: prevents iOS double-tap zoom */
+/* ── GLOBAL TOUCH / TAP ─────────────────────────────────────────── */
+*{-webkit-tap-highlight-color:transparent}
 html,body{touch-action:manipulation}
-.hdr-action-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;min-width:36px;border-radius:10px;border:1.5px solid var(--bdr);background:rgba(255,255,255,0.05);color:var(--pur);cursor:pointer;outline:none;transition:all 0.18s;padding:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0}
+.task-card,.task-card *{touch-action:manipulation}
+button,a,.pick-quest-btn,.done-undo-btn,.hdr-action-btn{touch-action:manipulation}
+
+/* ── HEADER UNIFIED BUTTONS ─────────────────────────────────────── */
+.hdr-action-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;min-width:36px;
+  border-radius:10px;border:1.5px solid var(--bdr);
+  background:rgba(255,255,255,0.05);color:var(--pur);
+  cursor:pointer;outline:none;padding:0;flex-shrink:0;
+  transition:background 0.18s,border-color 0.18s,color 0.18s;
+}
 .hdr-action-btn:hover,.hdr-action-btn:active{background:rgba(199,125,255,0.18);border-color:var(--pur)}
-.hdr-action-btn svg{display:block;pointer-events:none}
-.hdr-newday{color:var(--teal)}.hdr-newday:hover,.hdr-newday:active{background:rgba(0,229,200,0.12)!important;border-color:var(--teal)!important;color:var(--teal)!important}
+.hdr-action-btn svg{display:block;pointer-events:none;flex-shrink:0}
+.hdr-newday{color:var(--teal)}
+.hdr-newday:hover,.hdr-newday:active{background:rgba(0,229,200,0.12)!important;border-color:var(--teal)!important;color:var(--teal)!important}
 .levels-btn,.new-day-btn,.hdr-btn{display:none!important}
+
+/* ── MOBILE ADD SHEET ────────────────────────────────────────────── */
 .add-sheet input,.add-sheet select,.add-sheet input[type="date"]{font-size:16px!important}
-@media(max-width:768px){.add-overlay{align-items:flex-end!important;padding:0!important}.add-sheet{border-radius:22px 22px 0 0!important;max-height:88svh!important;overflow-y:auto!important;padding-bottom:max(16px,env(safe-area-inset-bottom))!important}}
+@media(max-width:768px){
+  .add-overlay{align-items:flex-end!important;padding:0!important}
+  .add-sheet{border-radius:22px 22px 0 0!important;max-height:88svh!important;overflow-y:auto!important;padding-bottom:max(16px,env(safe-area-inset-bottom))!important}
+  .h-right{gap:6px!important}
+}
+
+/* ── BACKUP MODAL ────────────────────────────────────────────────── */
 .backup-modal-overlay{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:20px}
 .backup-modal-card{background:var(--surf);border:1.5px solid var(--bdr);border-radius:20px;padding:22px 20px;width:100%;max-width:320px}
 .backup-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:'Fredoka One',cursive;font-size:17px;color:var(--text)}
 .backup-modal-close{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;outline:none;padding:4px 8px;border-radius:6px}
 .backup-modal-why{font-size:13px;font-weight:700;color:var(--muted);line-height:1.6;margin:0 0 8px}
-.backup-modal-why strong{color:var(--text)}.backup-modal-how{font-size:12px;font-weight:700;color:var(--muted);line-height:1.5;margin:0 0 16px}
+.backup-modal-why strong{color:var(--text)}
+.backup-modal-how{font-size:12px;font-weight:700;color:var(--muted);line-height:1.5;margin:0 0 16px}
 .backup-modal-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .backup-modal-save{background:rgba(0,229,200,0.12);color:var(--teal);border:1.5px solid rgba(0,229,200,0.25);border-radius:12px;padding:11px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;cursor:pointer;outline:none}
 .backup-modal-restore{background:rgba(199,125,255,0.12);color:var(--pur);border:1.5px solid rgba(199,125,255,0.25);border-radius:12px;padding:11px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;cursor:pointer;outline:none}
+
+/* ── PRIORITY ────────────────────────────────────────────────────── */
 .prio-pill{display:inline-block;border-radius:5px;font-size:10px;font-weight:900;padding:1px 7px;margin-right:5px;vertical-align:middle}
 .prio-pill-urgent{background:rgba(255,80,80,0.18);color:#ff6060;border:1px solid rgba(255,80,80,0.35)}
 .prio-pill-low{background:rgba(144,128,184,0.12);color:var(--muted);border:1px solid rgba(144,128,184,0.2)}
 .task-card.priority-urgent .tc-left{border-left:5px solid #ff6060!important;background:rgba(255,80,80,0.06)!important}
-.task-card.priority-low{opacity:0.75}.task-card.priority-low:hover{opacity:1}
+.task-card.priority-low{opacity:0.75}
+
+/* ── QUEST ───────────────────────────────────────────────────────── */
 .task-card.is-quest .tc-left{border-left:5px solid var(--yel)!important;background:rgba(255,209,102,0.07)!important}
 .quest-badge{display:inline-block;background:rgba(255,209,102,0.18);color:var(--yel);border:1px solid rgba(255,209,102,0.4);border-radius:5px;font-size:10px;font-weight:900;padding:1px 8px;margin-right:5px;vertical-align:middle}
-.cm-quest{background:rgba(255,209,102,0.1);color:var(--yel)}
+.cm-quest{background:rgba(255,209,102,0.1)!important;color:var(--yel)!important}
 .pick-quest-row{display:flex;gap:8px;margin-bottom:10px}
-.pick-quest-btn{flex:1;padding:9px 14px;border-radius:12px;border:1.5px dashed rgba(255,209,102,0.4);background:rgba(255,209,102,0.06);color:var(--yel);font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;outline:none;display:flex;align-items:center;gap:6px;justify-content:center;touch-action:manipulation}
+.pick-quest-btn{
+  flex:1;padding:10px 14px;border-radius:12px;
+  border:1.5px dashed rgba(255,209,102,0.4);
+  background:rgba(255,209,102,0.06);color:var(--yel);
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;
+  cursor:pointer;outline:none;
+  display:flex;align-items:center;gap:8px;justify-content:center;
+}
+.pick-quest-btn:hover{background:rgba(255,209,102,0.12);border-color:rgba(255,209,102,0.6)}
 .pick-quest-active{border-style:solid;background:rgba(255,209,102,0.12);border-color:rgba(255,209,102,0.6)}
+
+/* ── DONE UNDO ───────────────────────────────────────────────────── */
 .done-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
-.done-undo-btn{background:rgba(199,125,255,0.1);border:1.5px solid rgba(199,125,255,0.2);color:var(--pur);border-radius:8px;padding:3px 9px;font-size:13px;cursor:pointer;outline:none;font-family:'Nunito',sans-serif;font-weight:800;touch-action:manipulation}
+.done-undo-btn{background:rgba(199,125,255,0.1);border:1.5px solid rgba(199,125,255,0.2);color:var(--pur);border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;outline:none;font-family:'Nunito',sans-serif;font-weight:800}
+.done-undo-btn:hover{background:rgba(199,125,255,0.22)}
+
+/* ── PRESTIGE ────────────────────────────────────────────────────── */
 .prestige-overlay{position:fixed;inset:0;z-index:800;background:rgba(5,3,15,0.97);display:flex;align-items:center;justify-content:center;cursor:pointer}
 .prestige-card{text-align:center;padding:40px 30px;max-width:340px}
 .prestige-stars{font-size:20px;letter-spacing:16px;color:gold;margin-bottom:24px}
@@ -520,14 +559,28 @@ html,body{touch-action:manipulation}
 .prestige-msg{font-size:13px;font-weight:700;color:rgba(240,230,255,0.6);line-height:1.7;margin-bottom:24px}
 .prestige-tap{font-size:11px;font-weight:700;color:rgba(255,209,102,0.4)}
 .prestige-tier{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(255,209,102,0.1),rgba(199,125,255,0.08));border:1.5px solid rgba(255,209,102,0.3);border-radius:16px;padding:14px 18px;margin-bottom:14px}
-.prestige-tier-icon{font-size:36px}.prestige-tier-name{font-family:'Fredoka One',cursive;font-size:20px;color:var(--yel)}
+.prestige-tier-icon{font-size:36px}
+.prestige-tier-name{font-family:'Fredoka One',cursive;font-size:20px;color:var(--yel)}
 .prestige-tier-sub{font-size:11px;font-weight:800;color:var(--muted);margin-top:2px}
+
+/* ── MASTERY ─────────────────────────────────────────────────────── */
 .mastery-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
-.mastery-card{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:1.5px solid rgba(255,255,255,0.06);border-radius:14px;padding:11px 14px;opacity:0.55}
+.mastery-card{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:1.5px solid rgba(255,255,255,0.06);border-radius:14px;padding:11px 14px;opacity:0.55;transition:opacity 0.2s}
 .mastery-card.mastery-unlocked{opacity:1;border-color:rgba(199,125,255,0.25);background:rgba(199,125,255,0.06)}
-.mastery-icon{font-size:24px;width:34px;text-align:center;flex-shrink:0}.mastery-body{flex:1;min-width:0}.mastery-name{font-size:13px;font-weight:900;color:var(--text)}.mastery-desc{font-size:11px;font-weight:700;color:var(--muted);margin-top:2px}.mastery-done{color:#4ade80;font-weight:900}
-.mastery-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:100px;margin-top:6px;overflow:hidden}.mastery-fill{height:100%;background:linear-gradient(90deg,var(--pur),var(--pink));border-radius:100px}
-.credits{text-align:center;font-size:10px;font-weight:700;color:rgba(144,128,184,0.35);letter-spacing:0.5px;padding:4px 0 8px}
+.mastery-icon{font-size:24px;width:34px;text-align:center;flex-shrink:0}
+.mastery-body{flex:1;min-width:0}
+.mastery-name{font-size:13px;font-weight:900;color:var(--text)}
+.mastery-desc{font-size:11px;font-weight:700;color:var(--muted);margin-top:2px}
+.mastery-done{color:#4ade80;font-weight:900}
+.mastery-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:100px;margin-top:6px;overflow:hidden}
+.mastery-fill{height:100%;background:linear-gradient(90deg,var(--pur),var(--pink));border-radius:100px}
+
+/* ── CAL DOTS ────────────────────────────────────────────────────── */
+.cal-dots{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;margin-top:2px}
+.cal-dot{display:inline-block;width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* ── CREDITS ─────────────────────────────────────────────────────── */
+.credits{text-align:center;font-size:10px;font-weight:700;color:rgba(144,128,184,0.35);letter-spacing:0.5px;padding:4px 0 10px}
 
 </style>
   <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiQURIRCBUYXNrIFRyYWNrZXIiLCJzaG9ydF9uYW1lIjoiVGFzayBUcmFja2VyIiwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmNWYzZmYiLCJ0aGVtZV9jb2xvciI6IiNmNWYzZmYiLCJpY29ucyI6W3sic3JjIjoiaWNvbi01MTIucG5nIiwic2l6ZXMiOiI1MTJ4NTEyIiwidHlwZSI6ImltYWdlL3BuZyIsInB1cnBvc2UiOiJhbnkgbWFza2FibGUifV19">
@@ -694,8 +747,8 @@ html,body{touch-action:manipulation}
     <div class="app-title">🧠 ADHD Task Tracker</div>
     <div class="h-right">
       <div class="streak-pill" id="hStreak">🔥 0</div>
-      <button class="hdr-action-btn" onclick="openLevels()" title="Levels"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><polygon points="8.5,2 10.8,7 16,7.5 12,11.2 13.3,16.5 8.5,13.5 3.7,16.5 5,11.2 1,7.5 6.2,7" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg></button>
-    <button class="hdr-action-btn" onclick="openBackupModal()" title="Backup"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 2v8M6 7.5l2.5 2.5 2.5-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button class="hdr-action-btn hdr-newday" onclick="newDay()" title="New Day"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M14 10.5A6 6 0 118 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M11 7.5h3.5M13 6l1.5 1.5L13 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="hdr-action-btn" onclick="openLevels()" title="Levels &amp; XP"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="9,2 11.5,7.5 17,8 12.7,12 14,17.5 9,14.5 4,17.5 5.3,12 1,8 6.5,7.5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg></button>
+    <button class="hdr-action-btn" onclick="openBackupModal()" title="Backup &amp; Restore"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v9M6.5 8l2.5 3 2.5-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button class="hdr-action-btn hdr-newday" onclick="newDay()" title="New Day"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15 11A6.5 6.5 0 118.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8h4M14 6l2 2-2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
   <div class="h-lv-row">
@@ -1395,7 +1448,7 @@ function renderProgress(){
   renderHeader();
   renderProgressChart();
 
-  if(typeof MASTERY_TITLES!=="undefined"){var mt=document.getElementById("masteryTitles");if(mt){mt.innerHTML=MASTERY_TITLES.map(function(t){var u=S.unlockedTitles.includes(t.id),p=0,ht="";if(!u){if(t.id==="starter"){p=Math.min(100,Math.round(S.allTimeDone/10*100));ht=S.allTimeDone+"/10";}if(t.id==="consist"){p=Math.min(100,Math.round(S.streak/7*100));ht=S.streak+"/7d";}if(t.id==="combo"){p=Math.min(100,Math.round(S.maxCombo/5*100));ht=S.maxCombo+"/5";}if(t.id==="quest10"){p=Math.min(100,Math.round(S.questsCompleted/10*100));ht=S.questsCompleted+"/10";}if(t.id==="deep10"){p=Math.min(100,Math.round(S.deepWorkDone/10*100));ht=S.deepWorkDone+"/10";}if(t.id==="century"){p=Math.min(100,Math.round(S.allTimeDone/100*100));ht=S.allTimeDone+"/100";}if(t.id==="unstop"){p=Math.min(100,Math.round(S.streak/14*100));ht=S.streak+"/14d";}if(t.id==="legend"){p=Math.min(100,Math.round(S.xp/3000*100));ht=S.xp+"/3000";}}return'<div class="mastery-card'+(u?" mastery-unlocked":"")+'"><div class="mastery-icon">'+t.icon+'</div><div class="mastery-body"><div class="mastery-name">'+t.name+'</div><div class="mastery-desc">'+(u?'<span class="mastery-done">✅ Unlocked</span>':t.desc+(ht?' <span style="opacity:.6;font-size:10px">'+ht+'</span>':"")+'</div>')+(!u&&p>0?'<div class="mastery-bar"><div class="mastery-fill" style="width:'+p+'%"></div></div>':"")+'</div></div>';}).join("");}}  var pT=document.getElementById("prestigeTier");if(pT){pT.style.display=S.prestige>0?"flex":"none";if(S.prestige>0){var pi=document.getElementById("prestigeIcon"),pn=document.getElementById("prestigeName"),pc=document.getElementById("prestigeCount");if(pi)pi.textContent=getPrestigeBadge();if(pn)pn.textContent=getLegendTitle();if(pc)pc.textContent="Prestige "+S.prestige;}}
+  if(typeof MASTERY_TITLES!=="undefined"){var mt=document.getElementById("masteryTitles");if(mt){mt.innerHTML=MASTERY_TITLES.map(function(t){var u=S.unlockedTitles.includes(t.id),p=0,ht="";if(!u){if(t.id==="starter"){p=Math.min(100,Math.round(S.allTimeDone/10*100));ht=S.allTimeDone+"/10";}if(t.id==="consist"){p=Math.min(100,Math.round(S.streak/7*100));ht=S.streak+"/7d";}if(t.id==="combo"){p=Math.min(100,Math.round(S.maxCombo/5*100));ht=S.maxCombo+"/5";}if(t.id==="quest10"){p=Math.min(100,Math.round(S.questsCompleted/10*100));ht=S.questsCompleted+"/10";}if(t.id==="deep10"){p=Math.min(100,Math.round(S.deepWorkDone/10*100));ht=S.deepWorkDone+"/10";}if(t.id==="century"){p=Math.min(100,Math.round(S.allTimeDone/100*100));ht=S.allTimeDone+"/100";}if(t.id==="unstop"){p=Math.min(100,Math.round(S.streak/14*100));ht=S.streak+"/14d";}if(t.id==="legend"){p=Math.min(100,Math.round(S.xp/3000*100));ht=S.xp+"/3000";}}return'<div class="mastery-card'+(u?" mastery-unlocked":"")+'"><div class="mastery-icon">'+t.icon+'</div><div class="mastery-body"><div class="mastery-name">'+t.name+'</div><div class="mastery-desc">'+(u?'<span class="mastery-done">✅ Unlocked</span>':t.desc+(ht?' <span style="opacity:.6;font-size:10px">'+ht+'</span>':"")+'</div>')+(!u&&p>0?'<div class="mastery-bar"><div class="mastery-fill" style="width:'+p+'%"></div></div>':"")+'</div></div>';}).join("");}}var pT=document.getElementById("prestigeTier");if(pT){pT.style.display=S.prestige>0?"flex":"none";if(S.prestige>0){var pi=document.getElementById("prestigeIcon"),pn=document.getElementById("prestigeName"),pc=document.getElementById("prestigeCount");if(pi)pi.textContent=getPrestigeBadge();if(pn)pn.textContent=getLegendTitle();if(pc)pc.textContent="Prestige "+S.prestige;}}
   const lv=getLevel(S.xp),nx=getNext(S.xp);
   document.getElementById("pXP").textContent=S.xp.toLocaleString();
   document.getElementById("pDone").textContent=S.allTimeDone;
@@ -2032,43 +2085,51 @@ function dismissPrestige(){var el=document.getElementById("prestigeOverlay");if(
 var MASTERY_TITLES=[{id:"starter",icon:"🌱",name:"The Starter",desc:"Complete 10 tasks",check:function(s){return s.allTimeDone>=10;}},{id:"consist",icon:"📅",name:"Consistent",desc:"7-day streak",check:function(s){return s.streak>=7;}},{id:"combo",icon:"⚡",name:"Combo Master",desc:"5× combo",check:function(s){return s.maxCombo>=5;}},{id:"quest10",icon:"⚔️",name:"Quest Champion",desc:"10 Daily Quests",check:function(s){return s.questsCompleted>=10;}},{id:"deep10",icon:"🌊",name:"Deep Diver",desc:"10 Deep Work tasks",check:function(s){return s.deepWorkDone>=10;}},{id:"century",icon:"💯",name:"Century Club",desc:"100 tasks",check:function(s){return s.allTimeDone>=100;}},{id:"unstop",icon:"🔥",name:"Unstoppable",desc:"14-day streak",check:function(s){return s.streak>=14;}},{id:"legend",icon:"💎",name:"The Legend",desc:"Prestige once",check:function(s){return s.prestige>=1;}}];
 function checkMasteryTitles(){var changed=false;MASTERY_TITLES.forEach(function(t){if(!S.unlockedTitles.includes(t.id)&&t.check(S)){S.unlockedTitles.push(t.id);changed=true;setTimeout(function(){showToast(t.icon+" Title unlocked: "+t.name+"!");},800);}});if(changed)save();}
 function setQuest(id){S.questId=(S.questId===id)?null:id;S.questDate=S.questId?new Date().toDateString():null;save();renderTasks();showToast(S.questId?"⚔️ Daily Quest set! 3× XP on completion.":"Quest cleared.");}
-function pickQuest(){var v=getVisible();if(!v.length){showToast("No tasks to set as quest.");return;}var s=v.slice().sort(function(a,b){var p={urgent:0,normal:1,low:2};return(p[a.priority||"normal"]||1)-(p[b.priority||"normal"]||1);});setQuest(s[0].id);}
+function pickQuest(){var v=getVisible();if(!v.length){showToast("No tasks to set as quest.");return;}var sorted=v.slice().sort(function(a,b){var p={urgent:0,normal:1,low:2};return(p[a.priority||"normal"]||1)-(p[b.priority||"normal"]||1);});setQuest(sorted[0].id);}
 function updateQuestBtn(){var btn=document.getElementById("questBtn"),lbl=document.getElementById("questBtnLabel");if(!btn||!lbl)return;var qt=S.questId?S.tasks.find(function(t){return t.id===S.questId&&!t.done;}):null;if(qt){lbl.textContent="Quest: "+qt.text.slice(0,28)+(qt.text.length>28?"…":"");btn.classList.add("pick-quest-active");btn.onclick=function(){setQuest(S.questId);};}else{lbl.textContent="Pick my Quest";btn.classList.remove("pick-quest-active");btn.onclick=pickQuest;}}
 function uncompleteTask(id){var t=S.tasks.find(function(x){return x.id===id;});if(!t||!t.done)return;t.done=false;if(t.freq==="daily"||t.freq==="weekly"||t.freq==="monthly"||t.freq==="biweekly")t.lastDone=null;var wi=S.wins.findIndex(function(w){return w.text===t.text;});if(wi!==-1)S.wins.splice(wi,1);S.allTimeDone=Math.max(0,S.allTimeDone-1);S.todayDone=Math.max(0,S.todayDone-1);save();renderHeader();renderTasks();showToast("↩ Task moved back to active");}
 function openBackupModal(){var el=document.getElementById("backupModal");if(el)el.style.display="flex";}
 function closeBackupModal(){var el=document.getElementById("backupModal");if(el)el.style.display="none";}
 
-// ── KEYBOARD RISE FIX ────────────────────────────────────────────────────────
+// ── KEYBOARD: push add sheet above virtual keyboard ──────────────────────────
 (function(){
-  function onVP(){var o=document.getElementById('addSheet');if(!o||o.style.display==='none')return;var k=Math.max(0,window.innerHeight-(window.visualViewport?window.visualViewport.height:window.innerHeight)-10);o.style.paddingBottom=(k>80?k:0)+'px';}
-  if(window.visualViewport)window.visualViewport.addEventListener('resize',onVP);
-  document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('.add-sheet'))setTimeout(function(){e.target.scrollIntoView({behavior:'smooth',block:'nearest'});},150);});
+  function adj(){
+    var o=document.getElementById('addSheet');
+    if(!o||o.style.display==='none')return;
+    var vp=window.visualViewport;
+    var k=vp?Math.max(0,window.innerHeight-vp.height-10):0;
+    o.style.paddingBottom=(k>80?k:0)+'px';
+  }
+  if(window.visualViewport)window.visualViewport.addEventListener('resize',adj);
+  document.addEventListener('focusin',function(e){
+    if(e.target.closest&&e.target.closest('.add-sheet'))
+      setTimeout(function(){e.target.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
+  });
 })();
 // ── DOUBLE-TAP TO COMPLETE ────────────────────────────────────────────────────
+// CSS touch-action:manipulation on html/body + task-card prevents iOS zoom.
+// No preventDefault needed — just count taps cleanly on touchend.
 (function(){
-  var _id=null,_t=0,_sx=0,_sy=0,_timer=null;
-  document.addEventListener('touchstart',function(e){
-    var card=e.target.closest&&e.target.closest('.task-card');
-    if(!card)return;
-    if(e.target.closest('button,input,select,textarea,.drag-handle,.steps-area,.card-menu,.menu-btn'))return;
-    _sx=e.changedTouches[0].clientX;_sy=e.changedTouches[0].clientY;
-    e.preventDefault();
-  },{passive:false,capture:true});
+  var _id=null,_t=0,_timer=null;
   document.addEventListener('touchend',function(e){
     var card=e.target.closest&&e.target.closest('.task-card');
     if(!card)return;
-    if(e.target.closest('button,input,select,textarea,.drag-handle,.steps-area,.card-menu,.menu-btn'))return;
-    if(Math.abs(e.changedTouches[0].clientX-_sx)>12||Math.abs(e.changedTouches[0].clientY-_sy)>12)return;
-    var id=card.id.replace('tc_','');if(!id)return;
+    if(e.target.closest('button,input,select,textarea,.drag-handle,.steps-area,.card-menu,.menu-btn,.done-card'))return;
+    var id=card.id.replace('tc_','');
+    if(!id)return;
     var now=Date.now();
-    if(_id===id&&now-_t<500){
+    if(_id===id&&now-_t<600){
       clearTimeout(_timer);_id=null;_t=0;
-      e.preventDefault();
-      card.style.transition='opacity 0.12s';card.style.opacity='0.4';
-      setTimeout(function(){card.style.opacity='';card.style.transition='';},150);
+      card.style.transition='opacity 0.1s';
+      card.style.opacity='0.45';
+      setTimeout(function(){card.style.opacity='';card.style.transition='';},120);
       if(typeof completeTask==='function')completeTask(id);
-    }else{_id=id;_t=now;clearTimeout(_timer);_timer=setTimeout(function(){_id=null;},550);}
-  },{passive:false,capture:true});
+    }else{
+      _id=id;_t=now;
+      clearTimeout(_timer);
+      _timer=setTimeout(function(){_id=null;},700);
+    }
+  });
 })();
 </script>
 <div class="backup-modal-overlay" id="backupModal" style="display:none" onclick="if(event.target===this)closeBackupModal()"><div class="backup-modal-card"><div class="backup-modal-head"><span>💾 Your data</span><button class="backup-modal-close" onclick="closeBackupModal()">✕</button></div><p class="backup-modal-why">Tasks, XP, and progress are saved <strong>in this browser only</strong>. Clearing cache, switching browser, or changing device will erase everything.</p><p class="backup-modal-how">Save a file to your device and restore it anytime — on any device, any browser.</p><div class="backup-modal-btns"><button class="backup-modal-save" onclick="closeBackupModal();exportBackup()">⬇ Save backup</button><button class="backup-modal-restore" onclick="closeBackupModal();importBackup()">⬆ Restore</button></div><input type="file" id="restoreInput" accept=".json" style="display:none" onchange="handleRestore(this)"/></div></div>
