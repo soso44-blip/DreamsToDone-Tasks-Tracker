@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f5f3ff">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -82,11 +82,6 @@ body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;min-
 .survival-msg{display:none;background:rgba(0,229,200,0.07);border:1.5px solid rgba(0,229,200,0.2);border-radius:11px;padding:9px 13px;font-size:12px;font-weight:700;color:var(--teal);text-align:center;margin-bottom:8px}
 
 /* CONTEXT */
-.ctx-row{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;scrollbar-width:none;padding-bottom:2px}
-.ctx-row::-webkit-scrollbar{display:none}
-.ctx-btn{flex-shrink:0;border:2px solid transparent;border-radius:100px;padding:5px 13px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;cursor:pointer;transition:all 0.2s;outline:none;white-space:nowrap}
-.ctx-btn.active{background:rgba(199,125,255,0.18);border-color:var(--pur);color:var(--pur)}
-.ctx-btn:not(.active){background:rgba(0,0,0,0.04);color:var(--muted)}
 
 /* PROGRESS */
 .prog-row{display:flex;align-items:center;gap:10px;margin-bottom:4px}
@@ -130,7 +125,7 @@ body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;min-
 .step-txt{font-size:13px;font-weight:700;color:var(--text);flex:1;line-height:1.3}
 .sdone{text-decoration:line-through;color:var(--muted)}
 .step-add-row{display:flex;gap:6px;margin-top:6px}
-.step-inp{flex:1;background:rgba(0,0,0,0.04);border:1.5px solid var(--bdr);border-radius:9px;padding:7px 10px;font-size:12px;font-weight:700;color:var(--text);outline:none;font-family:'Nunito',sans-serif}
+.step-inp{flex:1;background:rgba(255,255,255,0.05);border:1.5px solid var(--bdr);border-radius:9px;padding:7px 10px;font-size:12px;font-weight:700;color:var(--text);outline:none;font-family:'Nunito',sans-serif}
 .step-inp:focus{border-color:rgba(199,125,255,0.4)}
 .step-inp::placeholder{color:var(--muted)}
 .step-add{background:var(--pur);border:none;color:#fff;border-radius:8px;padding:7px 12px;font-weight:900;font-size:14px;cursor:pointer;flex-shrink:0;outline:none}
@@ -229,7 +224,7 @@ select{cursor:pointer}
 .timer-done-btn{padding:14px 40px;border-radius:100px;border:none;color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;cursor:pointer;transition:all 0.2s;margin-bottom:12px;outline:none}
 .timer-done-btn:hover{transform:scale(1.05)}
 .timer-done-btn:active{transform:scale(0.95)}
-.timer-cancel-btn{background:none;border:1.5px solid rgba(0,0,0,0.11);color:var(--muted);border-radius:100px;padding:10px 28px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;outline:none;transition:all 0.2s}
+.timer-cancel-btn{background:none;border:1.5px solid rgba(255,255,255,0.15);color:var(--muted);border-radius:100px;padding:10px 28px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;outline:none;transition:all 0.2s}
 .timer-cancel-btn:hover{border-color:rgba(255,255,255,0.3);color:var(--text)}
 
 /* CONFETTI */
@@ -262,7 +257,7 @@ select{cursor:pointer}
 .levels-title{font-family:'Fredoka One',cursive;font-size:20px;color:#ff6eb4}
 .levels-close{background:rgba(0,0,0,0.05);border:1.5px solid rgba(0,0,0,0.08);color:rgba(255,255,255,0.5);border-radius:8px;padding:5px 10px;font-size:14px;cursor:pointer;outline:none;transition:all 0.2s}
 .levels-close:hover{background:rgba(0,0,0,0.09);color:var(--text)}
-.lv-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;margin-bottom:7px;border:1.5px solid rgba(0,0,0,0.04);transition:all 0.2s}
+.lv-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;margin-bottom:7px;border:1.5px solid rgba(255,255,255,0.05);transition:all 0.2s}
 .lv-current{background:rgba(199,125,255,0.12);border-color:rgba(199,125,255,0.4)}
 .lv-done{background:rgba(0,229,200,0.05);border-color:rgba(0,229,200,0.15);opacity:0.7}
 .lv-locked{background:rgba(255,255,255,0.02);opacity:0.4}
@@ -314,7 +309,7 @@ select{cursor:pointer}
 .cal-day-names{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px}
 .cal-day-names div{text-align:center;font-size:9px;font-weight:900;color:var(--muted);letter-spacing:1px;padding:3px 0}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:8px}
-.cal-cell{background:rgba(255,255,255,0.03);border:1px solid rgba(0,0,0,0.04);border-radius:8px;padding:4px 2px;min-height:42px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;align-items:center}
+.cal-cell{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);border-radius:8px;padding:4px 2px;min-height:42px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;align-items:center}
 .cal-cell:hover{background:rgba(199,125,255,0.1);border-color:rgba(199,125,255,0.3);transform:scale(1.05)}
 .cal-empty{background:transparent;border-color:transparent;cursor:default;pointer-events:none}
 .cal-today{background:rgba(199,125,255,0.15);border-color:rgba(199,125,255,0.5)}
@@ -357,7 +352,7 @@ select{cursor:pointer}
 
 
 /* FOOTER */
-.app-footer{position:fixed;bottom:0;left:0;right:0;z-index:50;padding:5px 20px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;font-weight:700;color:rgba(107,91,149,0.4);pointer-events:none;letter-spacing:0.5px}
+.app-footer{position:fixed;bottom:0;left:0;right:0;z-index:50;padding:5px 20px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;font-weight:700;color:rgba(144,128,184,0.35);pointer-events:none;letter-spacing:0.5px}
 .footer-sep{opacity:0.5}
 
 /* BACKUP SECTION */
@@ -417,7 +412,7 @@ select{cursor:pointer}
 .search-clear:hover{color:var(--pink)}
 
 /* DRAG & DROP */
-.drag-handle{color:rgba(0,0,0,0.11);font-size:16px;cursor:grab;padding:12px 0 12px 12px;flex-shrink:0;user-select:none;line-height:1;display:flex;align-items:center;transition:color 0.2s}
+.drag-handle{color:rgba(255,255,255,0.15);font-size:16px;cursor:grab;padding:12px 0 12px 12px;flex-shrink:0;user-select:none;line-height:1;display:flex;align-items:center;transition:color 0.2s}
 .drag-handle:hover{color:var(--pur)}
 .drag-handle:active{cursor:grabbing}
 .task-card.dragging{opacity:0.4;transform:scale(0.98);border-style:dashed}
@@ -434,7 +429,7 @@ select{cursor:pointer}
 .ob-head{font-family:'Fredoka One',cursive;font-size:24px;color:var(--text);margin-bottom:12px}
 .ob-sub{font-size:14px;font-weight:700;color:rgba(28,16,51,0.7);line-height:1.6}
 .ob-dots{display:flex;justify-content:center;gap:7px;padding:16px 28px 4px}
-.ob-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.11);transition:all 0.3s}
+.ob-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.15);transition:all 0.3s}
 .ob-dot-active{background:var(--pur);width:20px;border-radius:100px}
 .ob-next-btn{display:block;width:calc(100% - 56px);margin:0 28px 12px;padding:14px;border-radius:16px;border:none;background:linear-gradient(135deg,var(--pur),var(--pink));color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;cursor:pointer;outline:none;transition:all 0.2s}
 .ob-next-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(199,125,255,0.3)}
@@ -456,8 +451,8 @@ select{cursor:pointer}
 /* (override white-space:nowrap) */
 
 /* CELEBRATION UNDO BUTTON */
-.cel-undo-btn{margin-top:12px;background:rgba(0,0,0,0.07);border:1.5px solid rgba(0,0,0,0.11);color:rgba(240,230,255,0.75);border-radius:10px;padding:8px 22px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;outline:none;transition:all 0.2s;display:none}
-.cel-undo-btn:hover{background:rgba(0,0,0,0.11);color:#fff}
+.cel-undo-btn{margin-top:12px;background:rgba(0,0,0,0.07);border:1.5px solid rgba(255,255,255,0.15);color:rgba(240,230,255,0.75);border-radius:10px;padding:8px 22px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;outline:none;transition:all 0.2s;display:none}
+.cel-undo-btn:hover{background:rgba(255,255,255,0.15);color:#fff}
 
 /* TOUCH — prevent iOS double-tap zoom on interactive elements */
 button,input,.task-card{touch-action:manipulation}
@@ -480,60 +475,42 @@ button,input,.task-card{touch-action:manipulation}
 .cal-add-btn{background:rgba(199,125,255,0.12);border:1.5px solid rgba(199,125,255,0.3);color:var(--pur);border-radius:9px;padding:4px 12px;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;cursor:pointer;outline:none;transition:all 0.2s}
 .cal-add-btn:hover{background:rgba(199,125,255,0.22)}
 
-
-/* UNIFIED HEADER ICON BUTTONS */
-.hdr-action-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;min-width:36px;border-radius:10px;border:1.5px solid var(--bdr);background:rgba(0,0,0,0.04);color:var(--pur);cursor:pointer;outline:none;transition:all 0.18s;padding:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0}
-.hdr-action-btn:hover,.hdr-action-btn:active{background:rgba(199,125,255,0.18);border-color:var(--pur)}
-.hdr-action-btn svg{display:block;pointer-events:none}
-.hdr-newday{color:var(--teal)}
-.hdr-newday:hover,.hdr-newday:active{background:rgba(0,229,200,0.12)!important;border-color:var(--teal)!important;color:var(--teal)!important}
-.levels-btn,.new-day-btn,.hdr-btn{display:none!important}
-/* PREVENT iOS AUTO-ZOOM: font-size must be >= 16px on all inputs */
-.add-sheet input,.add-sheet select,.add-sheet input[type="date"]{font-size:16px!important}
-/* ADD SHEET: slide up from bottom on mobile */
-@media(max-width:768px){
-  .add-overlay{align-items:flex-end!important;padding:0!important}
-  .add-sheet{border-radius:22px 22px 0 0!important;max-height:88svh!important;overflow-y:auto!important;padding-bottom:max(16px,env(safe-area-inset-bottom))!important}
-  .h-right{gap:6px!important}
-}
-/* BACKUP MODAL */
-.backup-modal-overlay{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:20px}
-.backup-modal-card{background:var(--surf);border:1.5px solid var(--bdr);border-radius:20px;padding:22px 20px;width:100%;max-width:320px}
-.backup-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:'Fredoka One',cursive;font-size:17px;color:var(--text)}
-.backup-modal-close{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;outline:none;padding:4px 8px;border-radius:6px}
-.backup-modal-why{font-size:13px;font-weight:700;color:var(--muted);line-height:1.6;margin:0 0 8px}
-.backup-modal-why strong{color:var(--text)}
-.backup-modal-how{font-size:12px;font-weight:700;color:var(--muted);line-height:1.5;margin:0 0 16px}
-.backup-modal-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.backup-modal-save{background:rgba(0,229,200,0.12);color:var(--teal);border:1.5px solid rgba(0,229,200,0.25);border-radius:12px;padding:11px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;cursor:pointer;outline:none}
-.backup-modal-restore{background:rgba(199,125,255,0.12);color:var(--pur);border:1.5px solid rgba(199,125,255,0.25);border-radius:12px;padding:11px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;cursor:pointer;outline:none}
 .task-card{box-shadow:0 1px 4px rgba(0,0,0,0.07)}
 input,select,textarea{background:var(--surf2)!important;color:var(--text)!important}
 .cel-overlay{background:rgba(28,16,51,0.88)!important}
 .cel-xp,.cel-sub{color:#f0e6ff!important}
 
-/* PRIORITY */
-.prio-pill{display:inline-block;border-radius:5px;font-size:10px;font-weight:900;padding:1px 7px;margin-right:6px;vertical-align:middle}
+/* GLOBAL: prevents iOS double-tap zoom */
+html,body{touch-action:manipulation}
+.hdr-action-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;min-width:36px;border-radius:10px;border:1.5px solid var(--bdr);background:rgba(255,255,255,0.05);color:var(--pur);cursor:pointer;outline:none;transition:all 0.18s;padding:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0}
+.hdr-action-btn:hover,.hdr-action-btn:active{background:rgba(199,125,255,0.18);border-color:var(--pur)}
+.hdr-action-btn svg{display:block;pointer-events:none}
+.hdr-newday{color:var(--teal)}.hdr-newday:hover,.hdr-newday:active{background:rgba(0,229,200,0.12)!important;border-color:var(--teal)!important;color:var(--teal)!important}
+.levels-btn,.new-day-btn,.hdr-btn{display:none!important}
+.add-sheet input,.add-sheet select,.add-sheet input[type="date"]{font-size:16px!important}
+@media(max-width:768px){.add-overlay{align-items:flex-end!important;padding:0!important}.add-sheet{border-radius:22px 22px 0 0!important;max-height:88svh!important;overflow-y:auto!important;padding-bottom:max(16px,env(safe-area-inset-bottom))!important}}
+.backup-modal-overlay{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:20px}
+.backup-modal-card{background:var(--surf);border:1.5px solid var(--bdr);border-radius:20px;padding:22px 20px;width:100%;max-width:320px}
+.backup-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:'Fredoka One',cursive;font-size:17px;color:var(--text)}
+.backup-modal-close{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;outline:none;padding:4px 8px;border-radius:6px}
+.backup-modal-why{font-size:13px;font-weight:700;color:var(--muted);line-height:1.6;margin:0 0 8px}
+.backup-modal-why strong{color:var(--text)}.backup-modal-how{font-size:12px;font-weight:700;color:var(--muted);line-height:1.5;margin:0 0 16px}
+.backup-modal-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.backup-modal-save{background:rgba(0,229,200,0.12);color:var(--teal);border:1.5px solid rgba(0,229,200,0.25);border-radius:12px;padding:11px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;cursor:pointer;outline:none}
+.backup-modal-restore{background:rgba(199,125,255,0.12);color:var(--pur);border:1.5px solid rgba(199,125,255,0.25);border-radius:12px;padding:11px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;cursor:pointer;outline:none}
+.prio-pill{display:inline-block;border-radius:5px;font-size:10px;font-weight:900;padding:1px 7px;margin-right:5px;vertical-align:middle}
 .prio-pill-urgent{background:rgba(255,80,80,0.18);color:#ff6060;border:1px solid rgba(255,80,80,0.35)}
 .prio-pill-low{background:rgba(144,128,184,0.12);color:var(--muted);border:1px solid rgba(144,128,184,0.2)}
 .task-card.priority-urgent .tc-left{border-left:5px solid #ff6060!important;background:rgba(255,80,80,0.06)!important}
-.task-card.priority-low{opacity:0.75}
-.task-card.priority-low:hover{opacity:1}
-/* QUEST */
+.task-card.priority-low{opacity:0.75}.task-card.priority-low:hover{opacity:1}
 .task-card.is-quest .tc-left{border-left:5px solid var(--yel)!important;background:rgba(255,209,102,0.07)!important}
-.quest-badge{display:inline-block;background:rgba(255,209,102,0.18);color:var(--yel);border:1px solid rgba(255,209,102,0.4);border-radius:5px;font-size:10px;font-weight:900;padding:1px 8px;margin-right:6px;vertical-align:middle}
+.quest-badge{display:inline-block;background:rgba(255,209,102,0.18);color:var(--yel);border:1px solid rgba(255,209,102,0.4);border-radius:5px;font-size:10px;font-weight:900;padding:1px 8px;margin-right:5px;vertical-align:middle}
 .cm-quest{background:rgba(255,209,102,0.1);color:var(--yel)}
-.cm-quest:hover{background:rgba(255,209,102,0.2)}
 .pick-quest-row{display:flex;gap:8px;margin-bottom:10px}
 .pick-quest-btn{flex:1;padding:9px 14px;border-radius:12px;border:1.5px dashed rgba(255,209,102,0.4);background:rgba(255,209,102,0.06);color:var(--yel);font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;outline:none;display:flex;align-items:center;gap:6px;justify-content:center;touch-action:manipulation}
 .pick-quest-active{border-style:solid;background:rgba(255,209,102,0.12);border-color:rgba(255,209,102,0.6)}
-/* DONE UNDO */
 .done-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
 .done-undo-btn{background:rgba(199,125,255,0.1);border:1.5px solid rgba(199,125,255,0.2);color:var(--pur);border-radius:8px;padding:3px 9px;font-size:13px;cursor:pointer;outline:none;font-family:'Nunito',sans-serif;font-weight:800;touch-action:manipulation}
-.done-undo-btn:hover{background:rgba(199,125,255,0.22)}
-/* TOUCH ACTION */
-.task-card,.task-card *{touch-action:manipulation}
-/* PRESTIGE */
 .prestige-overlay{position:fixed;inset:0;z-index:800;background:rgba(5,3,15,0.97);display:flex;align-items:center;justify-content:center;cursor:pointer}
 .prestige-card{text-align:center;padding:40px 30px;max-width:340px}
 .prestige-stars{font-size:20px;letter-spacing:16px;color:gold;margin-bottom:24px}
@@ -543,21 +520,14 @@ input,select,textarea{background:var(--surf2)!important;color:var(--text)!import
 .prestige-msg{font-size:13px;font-weight:700;color:rgba(240,230,255,0.6);line-height:1.7;margin-bottom:24px}
 .prestige-tap{font-size:11px;font-weight:700;color:rgba(255,209,102,0.4)}
 .prestige-tier{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(255,209,102,0.1),rgba(199,125,255,0.08));border:1.5px solid rgba(255,209,102,0.3);border-radius:16px;padding:14px 18px;margin-bottom:14px}
-.prestige-tier-icon{font-size:36px}
-.prestige-tier-name{font-family:'Fredoka One',cursive;font-size:20px;color:var(--yel)}
+.prestige-tier-icon{font-size:36px}.prestige-tier-name{font-family:'Fredoka One',cursive;font-size:20px;color:var(--yel)}
 .prestige-tier-sub{font-size:11px;font-weight:800;color:var(--muted);margin-top:2px}
-/* MASTERY */
 .mastery-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
 .mastery-card{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:1.5px solid rgba(255,255,255,0.06);border-radius:14px;padding:11px 14px;opacity:0.55}
 .mastery-card.mastery-unlocked{opacity:1;border-color:rgba(199,125,255,0.25);background:rgba(199,125,255,0.06)}
-.mastery-icon{font-size:24px;width:34px;text-align:center;flex-shrink:0}
-.mastery-body{flex:1;min-width:0}
-.mastery-name{font-size:13px;font-weight:900;color:var(--text)}
-.mastery-desc{font-size:11px;font-weight:700;color:var(--muted);margin-top:2px}
-.mastery-done{color:#4ade80;font-weight:900}
-.mastery-hint{opacity:0.7;font-size:10px}
-.mastery-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:100px;margin-top:6px;overflow:hidden}
-.mastery-fill{height:100%;background:linear-gradient(90deg,var(--pur),var(--pink));border-radius:100px}
+.mastery-icon{font-size:24px;width:34px;text-align:center;flex-shrink:0}.mastery-body{flex:1;min-width:0}.mastery-name{font-size:13px;font-weight:900;color:var(--text)}.mastery-desc{font-size:11px;font-weight:700;color:var(--muted);margin-top:2px}.mastery-done{color:#4ade80;font-weight:900}
+.mastery-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:100px;margin-top:6px;overflow:hidden}.mastery-fill{height:100%;background:linear-gradient(90deg,var(--pur),var(--pink));border-radius:100px}
+.credits{text-align:center;font-size:10px;font-weight:700;color:rgba(144,128,184,0.35);letter-spacing:0.5px;padding:4px 0 8px}
 
 </style>
   <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiQURIRCBUYXNrIFRyYWNrZXIiLCJzaG9ydF9uYW1lIjoiVGFzayBUcmFja2VyIiwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmNWYzZmYiLCJ0aGVtZV9jb2xvciI6IiNmNWYzZmYiLCJpY29ucyI6W3sic3JjIjoiaWNvbi01MTIucG5nIiwic2l6ZXMiOiI1MTJ4NTEyIiwidHlwZSI6ImltYWdlL3BuZyIsInB1cnBvc2UiOiJhbnkgbWFza2FibGUifV19">
@@ -724,8 +694,8 @@ input,select,textarea{background:var(--surf2)!important;color:var(--text)!import
     <div class="app-title">🧠 ADHD Task Tracker</div>
     <div class="h-right">
       <div class="streak-pill" id="hStreak">🔥 0</div>
-      <button class="hdr-action-btn" onclick="openLevels()" title="Levels"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="8.5,2 10.8,7 16,7.5 12,11.2 13.3,16.5 8.5,13.5 3.7,16.5 5,11.2 1,7.5 6.2,7" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg></button>
-    <button class="hdr-action-btn" onclick="openBackupModal()" title="Backup &amp; Restore"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 2v8M6 7.5l2.5 2.5 2.5-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button class="hdr-action-btn hdr-newday" onclick="newDay()" title="New Day"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 10.5A6 6 0 118 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M11 7.5h3.5M13 6l1.5 1.5L13 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="hdr-action-btn" onclick="openLevels()" title="Levels"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><polygon points="8.5,2 10.8,7 16,7.5 12,11.2 13.3,16.5 8.5,13.5 3.7,16.5 5,11.2 1,7.5 6.2,7" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg></button>
+    <button class="hdr-action-btn" onclick="openBackupModal()" title="Backup"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 2v8M6 7.5l2.5 2.5 2.5-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button class="hdr-action-btn hdr-newday" onclick="newDay()" title="New Day"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M14 10.5A6 6 0 118 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M11 7.5h3.5M13 6l1.5 1.5L13 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
   <div class="h-lv-row">
@@ -773,8 +743,7 @@ input,select,textarea{background:var(--surf2)!important;color:var(--text)!import
     <div class="sl" style="margin-bottom:6px;margin-top:8px">🏷️ Filter by category</div>
     <div class="cat-filter-row" id="catFilterRow"></div>
 
-    <div id="searchWrap" style="display:none"></div>
-<div id="addCtxRow" style="display:none"></div>
+    <div id="searchWrap" style="display:none"></div><div id="addCtxRow" style="display:none"></div>
     <div class="search-wrap-visible">
       <span class="search-icon-inline">🔍</span>
       <input class="search-input" id="searchInput" placeholder="Search tasks..." oninput="onSearchInput(this.value)" autocomplete="off"/>
@@ -794,6 +763,7 @@ input,select,textarea{background:var(--surf2)!important;color:var(--text)!import
     <div class="task-list" id="taskList"></div>
     <div id="doneSection"></div>
     <div class="fp"></div>
+    <div class="credits">© DreamsToDone · Made with 💜 for ADHD brains</div>
   </div>
 </div>
 
@@ -826,6 +796,7 @@ input,select,textarea{background:var(--surf2)!important;color:var(--text)!import
     </div>
     <div id="calTimeline"></div>
     <div style="height:20px"></div>
+    <div class="credits">© DreamsToDone · Made with 💜 for ADHD brains</div>
   </div>
 </div>
 
@@ -1018,7 +989,7 @@ let S={
 let addCat="Personal",addCtx="any",addEnergy="medium",addFreq="once";
 
 function save(){try{localStorage.setItem("adhd_tracker_v1",JSON.stringify(S));}catch(e){}}
-const DEMO_TASKS=[{id:"d1",text:"Take medication",cat:"Health",context:"any",energy:"low",time:"5min",freq:"daily",priority:"urgent",dueDate:null,startDate:null,endDate:null,done:false,pinned:true,steps:[],added:Date.now()-1000,lastDone:null},{id:"d2",text:"Reply to one urgent message",cat:"Work",context:"any",energy:"low",time:"5min",freq:"once",priority:"urgent",dueDate:"2026-05-28",startDate:null,endDate:null,done:false,pinned:false,steps:[],added:Date.now()-2000,lastDone:null},{id:"d3",text:"Drink a full glass of water",cat:"Health",context:"any",energy:"low",time:"5min",freq:"daily",priority:"normal",dueDate:null,startDate:null,endDate:null,done:false,pinned:false,steps:[],added:Date.now()-3000,lastDone:null},{id:"d4",text:"Check and process emails",cat:"Work",context:"any",energy:"medium",time:"15min",freq:"daily",priority:"normal",dueDate:null,startDate:null,endDate:null,done:false,pinned:false,steps:[],added:Date.now()-5000,lastDone:null},{id:"d5",text:"30 min walk or workout",cat:"Health",context:"any",energy:"medium",time:"30min",freq:"daily",priority:"normal",dueDate:null,startDate:null,endDate:null,done:false,pinned:false,steps:[{text:"Put on shoes",done:false},{text:"Get outside",done:false}],added:Date.now()-6000,lastDone:null},{id:"d6",text:"Work on most important project",cat:"Work",context:"any",energy:"high",time:"2hr+",freq:"once",priority:"urgent",dueDate:"2026-06-04",startDate:null,endDate:null,done:false,pinned:false,steps:[{text:"Define goal",done:false},{text:"Deep work 90 min",done:false}],added:Date.now()-8000,lastDone:null},];
+const DEMO_TASKS=[{id:"d1",text:"Take medication",cat:"Health",context:"any",energy:"low",time:"5min",freq:"daily",priority:"urgent",dueDate:null,startDate:null,endDate:null,done:false,pinned:true,steps:[],added:Date.now()-1000,lastDone:null},{id:"d2",text:"Reply to one urgent message",cat:"Work",context:"any",energy:"low",time:"5min",freq:"once",priority:"urgent",dueDate:"2026-05-29",startDate:null,endDate:null,done:false,pinned:false,steps:[],added:Date.now()-2000,lastDone:null},{id:"d3",text:"Drink a full glass of water",cat:"Health",context:"any",energy:"low",time:"5min",freq:"daily",priority:"normal",dueDate:null,startDate:null,endDate:null,done:false,pinned:false,steps:[],added:Date.now()-3000,lastDone:null},{id:"d4",text:"Check and process emails",cat:"Work",context:"any",energy:"medium",time:"15min",freq:"daily",priority:"normal",dueDate:null,startDate:null,endDate:null,done:false,pinned:false,steps:[],added:Date.now()-5000,lastDone:null},{id:"d5",text:"30 min walk or workout",cat:"Health",context:"any",energy:"medium",time:"30min",freq:"daily",priority:"normal",dueDate:null,startDate:null,endDate:null,done:false,pinned:false,steps:[{text:"Put on shoes",done:false},{text:"Get outside",done:false}],added:Date.now()-6000,lastDone:null},{id:"d6",text:"Work on most important project",cat:"Work",context:"any",energy:"high",time:"2hr+",freq:"once",priority:"urgent",dueDate:"2026-06-05",startDate:null,endDate:null,done:false,pinned:false,steps:[{text:"Define goal",done:false},{text:"Deep work 90 min",done:false}],added:Date.now()-8000,lastDone:null},];
 
 function load(){
   try{
@@ -1061,19 +1032,12 @@ function switchTab(t){
 // ── HEADER ────────────────────────────────────────────────────────────────────
 function renderHeader(){
   const lv=getLevel(S.xp),nx=getNext(S.xp);
-  var legendT=getLegendTitle();
-  if(legendT){
-    document.getElementById("hLvl").textContent=getPrestigeBadge()+" LEGEND";
-    document.getElementById("hName").textContent=legendT;
-  }else{
-    document.getElementById("hLvl").textContent="LVL "+lv.l;
-    document.getElementById("hName").textContent=lv.e+" "+lv.n;
-  }
+  document.getElementById("hLvl").textContent="LVL "+lv.l;
+  document.getElementById("hName").textContent=lv.e+" "+lv.n;
   document.getElementById("hXP").textContent=nx?S.xp+" / "+nx.x+" XP":S.xp+" XP";
   document.getElementById("hFill").style.width=getLvPct(S.xp)+"%";
   const score=getConsistencyScore(),dim=getDaysInMonth();
-  var sEmoji=getStreakEmoji(S.streak);
-  document.getElementById("hStreak").textContent=sEmoji+" "+score+"/"+dim;
+  document.getElementById("hStreak").textContent="📊 "+score+"/"+dim;
   // Combo indicator
   const combo=document.getElementById("comboBar");
   if(S.currentCombo>=2){
@@ -1119,6 +1083,7 @@ function applyFilters(t,includeDone){
   if(!includeDone&&t.done)return false;
   if(t.startDate&&t.startDate>todayISO2)return false;
   if(t.endDate&&t.endDate<todayISO2)return false;
+  if(S.context!=="any"&&t.context!=="any"&&t.context!==S.context)return false;
   if(S.energy==="low"&&t.energy==="high")return false;
   if(S.energy==="low"&&t.energy==="medium")return false;
   if(S.energy==="medium"&&t.energy==="high")return false;
@@ -1160,7 +1125,6 @@ function renderTasks(){
   });
   list.innerHTML=sorted.map(t=>taskCard(t)).join("");
   renderDone();
-  if(typeof updateQuestBtn==="function")updateQuestBtn();
 }
 
 function taskCard(t){
@@ -1183,7 +1147,7 @@ function taskCard(t){
     +'<div class="tc-left" style="background:'+col+'20;border-left:3px solid '+col+'">'
     +'<div class="tc-top">'
     +'<div class="tc-info">'
-    +'<div class="tc-name">'+(S.questId===t.id?' <span class="quest-badge">⚔️ Quest</span>':"")+(t.priority==="urgent"?' <span class="prio-pill prio-pill-urgent">🔴 Urgent</span>':t.priority==="low"?' <span class="prio-pill prio-pill-low">🕐 Whenever</span>':"")+esc(t.text)+(t.pinned?' <span class="pin">📌</span>':"")+freqBadge+stepsBadge+dueBadge+'</div>'
+    +'<div class="tc-name">'+(S.questId===t.id?'<span class="quest-badge">⚔️ Quest</span>':"")+(t.priority==="urgent"?'<span class="prio-pill prio-pill-urgent">🔴 Urgent</span>':t.priority==="low"?'<span class="prio-pill prio-pill-low">🕐 Whenever</span>':"")+esc(t.text)+(t.pinned?' <span class="pin">📌</span>':"")+freqBadge+stepsBadge+dueBadge+'</div>'
     +'<div class="tc-meta"><span class="cat-dot" style="background:'+ col +'"></span>'+t.cat+(t.energy==="low"?" · 🪫":t.energy==="high"?" · 🔥":"")+(t.notes?'<span class="has-notes"> 📝</span>':"")+(t.startDate?" · <span class='date-badge start-badge'>▶ "+t.startDate+"</span>":"")+(t.endDate?" · <span class='date-badge end-badge'>⏹ "+t.endDate+"</span>":"")+(resetLbl?" · 🔄 "+resetLbl:"")+'</div>'
     +'</div>'
     +(t.time&&t.time!=="none"?'<div class="tc-time">⏱ '+t.time+'</div>':"")
@@ -1213,9 +1177,8 @@ function renderDone(){
           +'<div class="done-name">'+esc(t.text)+'</div>'
           +(resetLbl?'<div class="done-reset">🔄 '+resetLbl+'</div>':"")
         +'</div>'
-        +'<div class="done-right">'
-          +'<div class="done-xp">+'+XP_MAP[t.time]+'xp</div>'
-          +'<button class="done-undo-btn" onclick="uncompleteTask(\''+t.id+'\')" title="Move back to active">↩</button>'
+        +'<div class="done-right"><div class="done-xp">+'+XP_MAP[t.time]+'xp</div>'
+          +'<button class="done-undo-btn" onclick="uncompleteTask(\''+t.id+'\')" title="Undo">↩</button>'
         +'</div>'
       +'</div>';
     }).join("");
@@ -1225,6 +1188,22 @@ function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").repl
 
 // ── DOUBLE-TAP DETECTION (mobile) ─────────────────────────────────────────────
 let tapTimer=null, lastTapId=null, lastTapTime=0;
+function handleTapStart(id,e){
+  // prevent interfering with button taps
+  if(e.target.closest("button"))return;
+  const now=Date.now();
+  if(lastTapId===id&&now-lastTapTime<350){
+    // double tap!
+    clearTimeout(tapTimer);
+    lastTapId=null;lastTapTime=0;
+    completeTask(id);
+    e.preventDefault();
+  }else{
+    lastTapId=id;lastTapTime=now;
+    tapTimer=setTimeout(()=>{lastTapId=null;},400);
+  }
+}
+function handleTapEnd(e){if(e.target.closest("button"))return;}
 
 // ── COMPLETE ──────────────────────────────────────────────────────────────────
 let lastCompleted=0;
@@ -1239,16 +1218,12 @@ function completeTask(id){
   // XP with multiplier
   const base=XP_MAP[t.time]||10;
   const mult=S.currentCombo>=5?3:S.currentCombo>=3?2:1;
-  const isQuest=(S.questId===id);
-  const isDeep=(t.energy==="high");
+  const isQuest=(S.questId===id);const isDeep=(t.energy==="high");
   const xpEarned=base*mult*(isQuest?3:1);
   if(isQuest){S.questId=null;S.questDate=null;S.questsCompleted++;}
   if(isDeep)S.deepWorkDone++;
   const oldLv=getLevel(S.xp);
-  var shouldPrestige=(S.xp+xpEarned>=3000&&S.prestige<5);
-  S.xp+=(shouldPrestige?xpEarned-(3000-S.xp):xpEarned);
-  if(shouldPrestige)S.xp=0;
-  S.allTimeDone++;S.todayDone++;
+  var sp=(S.xp+xpEarned>=3000&&S.prestige<5);S.xp+=sp?Math.max(0,3000-S.xp-1):xpEarned;if(sp)S.xp=0;S.allTimeDone++;S.todayDone++;
   if(t.freq!=="once")S.recurringDone++;
   S.lastDate=new Date().toDateString();S.lastTodayDate=S.lastDate;
   const td=todayStr();if(!S.activeDates.includes(td))S.activeDates.push(td);
@@ -1265,8 +1240,7 @@ function completeTask(id){
   const newLv=getLevel(S.xp);
   checkAchs();
   renderHeader();renderTasks();
-  checkMasteryTitles();
-  if(typeof shouldPrestige!=="undefined"&&shouldPrestige){setTimeout(triggerPrestige,2000);}
+  checkMasteryTitles();if(typeof sp!=="undefined"&&sp){setTimeout(triggerPrestige,2000);}
   const warmMsg=getWarmMsg();
   if(isQuest)showCelebration("+"+xpEarned+" XP","⚔️ QUEST COMPLETE!","3× XP earned. You slayed it.",true);
   else if(newLv.l>oldLv.l)showCelebration("+"+xpEarned+" XP","LEVEL UP! "+newLv.e+" "+newLv.n,warmMsg,true);
@@ -1421,34 +1395,7 @@ function renderProgress(){
   renderHeader();
   renderProgressChart();
 
-  // Mastery Titles
-  var mt=document.getElementById("masteryTitles");
-  if(mt&&typeof MASTERY_TITLES!=="undefined"){
-    mt.innerHTML=MASTERY_TITLES.map(function(t){
-      var unlocked=S.unlockedTitles.includes(t.id);
-      var pct=0,hint="";
-      if(!unlocked){
-        if(t.id==="starter"){pct=Math.min(100,Math.round(S.allTimeDone/10*100));hint=S.allTimeDone+"/10";}
-        if(t.id==="consist"){pct=Math.min(100,Math.round(S.streak/7*100));hint=S.streak+"/7 days";}
-        if(t.id==="combo"){pct=Math.min(100,Math.round(S.maxCombo/5*100));hint=S.maxCombo+"/5";}
-        if(t.id==="quest10"){pct=Math.min(100,Math.round(S.questsCompleted/10*100));hint=S.questsCompleted+"/10";}
-        if(t.id==="deep10"){pct=Math.min(100,Math.round(S.deepWorkDone/10*100));hint=S.deepWorkDone+"/10";}
-        if(t.id==="century"){pct=Math.min(100,Math.round(S.allTimeDone/100*100));hint=S.allTimeDone+"/100";}
-        if(t.id==="unstop"){pct=Math.min(100,Math.round(S.streak/14*100));hint=S.streak+"/14 days";}
-        if(t.id==="legend"){pct=Math.min(100,Math.round(S.xp/3000*100));hint=S.xp+"/3000 XP";}
-      }
-      return '<div class="mastery-card'+(unlocked?" mastery-unlocked":"")+'">'        +'<div class="mastery-icon">'+t.icon+'</div>'        +'<div class="mastery-body">'          +'<div class="mastery-name">'+t.name+'</div>'          +'<div class="mastery-desc">'+(unlocked?'<span class="mastery-done">✅ Unlocked</span>':t.desc+(hint?' <span class="mastery-hint">'+hint+'</span>':""))+'</div>'          +(!unlocked&&pct>0?'<div class="mastery-bar"><div class="mastery-fill" style="width:'+pct+'%"></div></div>':"")        +'</div></div>';
-    }).join("");
-  }
-  var presEl=document.getElementById("prestigeTier");
-  if(presEl){
-    presEl.style.display=S.prestige>0?"flex":"none";
-    if(S.prestige>0){
-      var pi=document.getElementById("prestigeIcon");if(pi)pi.textContent=getPrestigeBadge();
-      var pn=document.getElementById("prestigeName");if(pn)pn.textContent=getLegendTitle();
-      var pc=document.getElementById("prestigeCount");if(pc)pc.textContent="Prestige "+S.prestige;
-    }
-  }
+  if(typeof MASTERY_TITLES!=="undefined"){var mt=document.getElementById("masteryTitles");if(mt){mt.innerHTML=MASTERY_TITLES.map(function(t){var u=S.unlockedTitles.includes(t.id),p=0,ht="";if(!u){if(t.id==="starter"){p=Math.min(100,Math.round(S.allTimeDone/10*100));ht=S.allTimeDone+"/10";}if(t.id==="consist"){p=Math.min(100,Math.round(S.streak/7*100));ht=S.streak+"/7d";}if(t.id==="combo"){p=Math.min(100,Math.round(S.maxCombo/5*100));ht=S.maxCombo+"/5";}if(t.id==="quest10"){p=Math.min(100,Math.round(S.questsCompleted/10*100));ht=S.questsCompleted+"/10";}if(t.id==="deep10"){p=Math.min(100,Math.round(S.deepWorkDone/10*100));ht=S.deepWorkDone+"/10";}if(t.id==="century"){p=Math.min(100,Math.round(S.allTimeDone/100*100));ht=S.allTimeDone+"/100";}if(t.id==="unstop"){p=Math.min(100,Math.round(S.streak/14*100));ht=S.streak+"/14d";}if(t.id==="legend"){p=Math.min(100,Math.round(S.xp/3000*100));ht=S.xp+"/3000";}}return'<div class="mastery-card'+(u?" mastery-unlocked":"")+'"><div class="mastery-icon">'+t.icon+'</div><div class="mastery-body"><div class="mastery-name">'+t.name+'</div><div class="mastery-desc">'+(u?'<span class="mastery-done">✅ Unlocked</span>':t.desc+(ht?' <span style="opacity:.6;font-size:10px">'+ht+'</span>':"")+'</div>')+(!u&&p>0?'<div class="mastery-bar"><div class="mastery-fill" style="width:'+p+'%"></div></div>':"")+'</div></div>';}).join("");}}  var pT=document.getElementById("prestigeTier");if(pT){pT.style.display=S.prestige>0?"flex":"none";if(S.prestige>0){var pi=document.getElementById("prestigeIcon"),pn=document.getElementById("prestigeName"),pc=document.getElementById("prestigeCount");if(pi)pi.textContent=getPrestigeBadge();if(pn)pn.textContent=getLegendTitle();if(pc)pc.textContent="Prestige "+S.prestige;}}
   const lv=getLevel(S.xp),nx=getNext(S.xp);
   document.getElementById("pXP").textContent=S.xp.toLocaleString();
   document.getElementById("pDone").textContent=S.allTimeDone;
@@ -2075,175 +2022,53 @@ function finishOnboarding(){document.getElementById("onboardOverlay").style.disp
 function checkOnboarding(){if(!localStorage.getItem("adhd_onboarded"))startOnboarding();}
 
 
+function getStreakEmoji(s){if(s>=30)return"👑";if(s>=14)return"🔥";if(s>=7)return"⚡";if(s>=3)return"🌿";if(s>=1)return"🌱";return"📊";}
+function triggerMysteryBonus(){var b=[25,50,50,75,75,100,100,125,150,200][Math.floor(Math.random()*10)];S.xp+=b;S.wins.unshift({text:"🎁 Mystery Bonus!",xp:b,cat:"Personal",mult:1,date:Date.now()});if(S.wins.length>100)S.wins.pop();save();renderHeader();showCelebration("+"+b+" XP BONUS","🎁 Mystery reward!","Every 10th win gets a surprise.",false);spawnConfetti(40);}
+var PRESTIGE_BADGES=["","💎","🌌","⭐","👁️","∞"];
+function getPrestigeBadge(){return PRESTIGE_BADGES[Math.min(S.prestige,5)]||"∞";}
+function getLegendTitle(){if(!S.prestige)return null;return getPrestigeBadge()+" "+["","Legend","Legend II","Legend III","Legend IV","Legend V+"][Math.min(S.prestige,5)];}
+function triggerPrestige(){S.prestige++;S.xp=0;if(!S.unlockedTitles.includes("legend"))S.unlockedTitles.push("legend");save();renderHeader();renderTasks();var el=document.getElementById("prestigeOverlay"),pb=document.getElementById("prestigeBadge");if(pb)pb.textContent=getPrestigeBadge();if(el)el.style.display="flex";spawnConfetti(80);setTimeout(function(){if(el)el.style.display="none";},6000);}
+function dismissPrestige(){var el=document.getElementById("prestigeOverlay");if(el)el.style.display="none";}
+var MASTERY_TITLES=[{id:"starter",icon:"🌱",name:"The Starter",desc:"Complete 10 tasks",check:function(s){return s.allTimeDone>=10;}},{id:"consist",icon:"📅",name:"Consistent",desc:"7-day streak",check:function(s){return s.streak>=7;}},{id:"combo",icon:"⚡",name:"Combo Master",desc:"5× combo",check:function(s){return s.maxCombo>=5;}},{id:"quest10",icon:"⚔️",name:"Quest Champion",desc:"10 Daily Quests",check:function(s){return s.questsCompleted>=10;}},{id:"deep10",icon:"🌊",name:"Deep Diver",desc:"10 Deep Work tasks",check:function(s){return s.deepWorkDone>=10;}},{id:"century",icon:"💯",name:"Century Club",desc:"100 tasks",check:function(s){return s.allTimeDone>=100;}},{id:"unstop",icon:"🔥",name:"Unstoppable",desc:"14-day streak",check:function(s){return s.streak>=14;}},{id:"legend",icon:"💎",name:"The Legend",desc:"Prestige once",check:function(s){return s.prestige>=1;}}];
+function checkMasteryTitles(){var changed=false;MASTERY_TITLES.forEach(function(t){if(!S.unlockedTitles.includes(t.id)&&t.check(S)){S.unlockedTitles.push(t.id);changed=true;setTimeout(function(){showToast(t.icon+" Title unlocked: "+t.name+"!");},800);}});if(changed)save();}
+function setQuest(id){S.questId=(S.questId===id)?null:id;S.questDate=S.questId?new Date().toDateString():null;save();renderTasks();showToast(S.questId?"⚔️ Daily Quest set! 3× XP on completion.":"Quest cleared.");}
+function pickQuest(){var v=getVisible();if(!v.length){showToast("No tasks to set as quest.");return;}var s=v.slice().sort(function(a,b){var p={urgent:0,normal:1,low:2};return(p[a.priority||"normal"]||1)-(p[b.priority||"normal"]||1);});setQuest(s[0].id);}
+function updateQuestBtn(){var btn=document.getElementById("questBtn"),lbl=document.getElementById("questBtnLabel");if(!btn||!lbl)return;var qt=S.questId?S.tasks.find(function(t){return t.id===S.questId&&!t.done;}):null;if(qt){lbl.textContent="Quest: "+qt.text.slice(0,28)+(qt.text.length>28?"…":"");btn.classList.add("pick-quest-active");btn.onclick=function(){setQuest(S.questId);};}else{lbl.textContent="Pick my Quest";btn.classList.remove("pick-quest-active");btn.onclick=pickQuest;}}
+function uncompleteTask(id){var t=S.tasks.find(function(x){return x.id===id;});if(!t||!t.done)return;t.done=false;if(t.freq==="daily"||t.freq==="weekly"||t.freq==="monthly"||t.freq==="biweekly")t.lastDone=null;var wi=S.wins.findIndex(function(w){return w.text===t.text;});if(wi!==-1)S.wins.splice(wi,1);S.allTimeDone=Math.max(0,S.allTimeDone-1);S.todayDone=Math.max(0,S.todayDone-1);save();renderHeader();renderTasks();showToast("↩ Task moved back to active");}
 function openBackupModal(){var el=document.getElementById("backupModal");if(el)el.style.display="flex";}
 function closeBackupModal(){var el=document.getElementById("backupModal");if(el)el.style.display="none";}
 
-
-
-
-
-
-// ── STREAK EMOJI ──────────────────────────────────────────────────────────────
-function getStreakEmoji(s){
-  if(s>=30)return"👑";if(s>=14)return"🔥";if(s>=7)return"⚡";if(s>=3)return"🌿";if(s>=1)return"🌱";return"📊";
-}
-
-// ── MYSTERY BONUS ─────────────────────────────────────────────────────────────
-function triggerMysteryBonus(){
-  var bonuses=[25,50,50,75,75,100,100,125,150,200];
-  var bonus=bonuses[Math.floor(Math.random()*bonuses.length)];
-  S.xp+=bonus;
-  S.wins.unshift({text:"🎁 Mystery Bonus!",xp:bonus,cat:"Personal",mult:1,date:Date.now()});
-  if(S.wins.length>100)S.wins.pop();
-  if(S.allTimeDone>0&&S.allTimeDone%10===0){setTimeout(triggerMysteryBonus,2200);}
-  save();renderHeader();
-  showCelebration("+"+bonus+" XP BONUS","🎁 Mystery reward!","Every 10th win gets a surprise. Keep going.",false);
-  spawnConfetti(40);
-}
-
-// ── PRESTIGE ──────────────────────────────────────────────────────────────────
-const PRESTIGE_BADGES=["","💎","🌌","⭐","👁️","∞"];
-function getPrestigeBadge(){return PRESTIGE_BADGES[Math.min(S.prestige,5)]||"∞";}
-function getLegendTitle(){
-  if(!S.prestige)return null;
-  var names=["","Legend","Legend II","Legend III","Legend IV","Legend V+"];
-  return getPrestigeBadge()+" "+(names[Math.min(S.prestige,5)]||"Legend V+");
-}
-function triggerPrestige(){
-  S.prestige++;S.xp=0;
-  if(!S.unlockedTitles.includes("legend"))S.unlockedTitles.push("legend");
-  save();renderHeader();renderTasks();
-  var el=document.getElementById("prestigeOverlay");
-  var pb=document.getElementById("prestigeBadge");
-  if(pb)pb.textContent=getPrestigeBadge();
-  if(el)el.style.display="flex";
-  spawnConfetti(80);
-  setTimeout(function(){if(el)el.style.display="none";},6000);
-}
-function dismissPrestige(){var el=document.getElementById("prestigeOverlay");if(el)el.style.display="none";}
-
-// ── MASTERY TITLES ────────────────────────────────────────────────────────────
-var MASTERY_TITLES=[
-  {id:"starter", icon:"🌱",name:"The Starter",   desc:"Complete 10 tasks",           check:function(s){return s.allTimeDone>=10;}},
-  {id:"consist", icon:"📅",name:"Consistent",    desc:"Reach a 7-day streak",         check:function(s){return s.streak>=7;}},
-  {id:"combo",   icon:"⚡",name:"Combo Master",  desc:"Reach a 5× combo",             check:function(s){return s.maxCombo>=5;}},
-  {id:"quest10", icon:"⚔️",name:"Quest Champion",desc:"Complete 10 Daily Quests",     check:function(s){return s.questsCompleted>=10;}},
-  {id:"deep10",  icon:"🌊",name:"Deep Diver",    desc:"Complete 10 Deep Work tasks",  check:function(s){return s.deepWorkDone>=10;}},
-  {id:"century", icon:"💯",name:"Century Club",  desc:"Complete 100 tasks all-time",  check:function(s){return s.allTimeDone>=100;}},
-  {id:"unstop",  icon:"🔥",name:"Unstoppable",   desc:"Reach a 14-day streak",        check:function(s){return s.streak>=14;}},
-  {id:"legend",  icon:"💎",name:"The Legend",    desc:"Prestige to Legend status",    check:function(s){return s.prestige>=1;}},
-];
-function checkMasteryTitles(){
-  var changed=false;
-  MASTERY_TITLES.forEach(function(t){
-    if(!S.unlockedTitles.includes(t.id)&&t.check(S)){
-      S.unlockedTitles.push(t.id);changed=true;
-      setTimeout(function(){showToast(t.icon+" Title unlocked: "+t.name+"!");},800);
-    }
-  });
-  if(changed)save();
-}
-
-// ── DAILY QUEST ───────────────────────────────────────────────────────────────
-function setQuest(id){
-  S.questId=(S.questId===id)?null:id;
-  S.questDate=S.questId?new Date().toDateString():null;
-  save();renderTasks();
-  showToast(S.questId?"⚔️ Daily Quest set! 3× XP on completion.":"Quest cleared.");
-}
-function pickQuest(){
-  var visible=getVisible();
-  if(!visible.length){showToast("No tasks to set as quest.");return;}
-  var sorted=visible.slice().sort(function(a,b){
-    var po={urgent:0,normal:1,low:2};
-    return (po[a.priority||"normal"]||1)-(po[b.priority||"normal"]||1);
-  });
-  setQuest(sorted[0].id);
-}
-function updateQuestBtn(){
-  var btn=document.getElementById("questBtn");
-  var lbl=document.getElementById("questBtnLabel");
-  if(!btn||!lbl)return;
-  var qt=S.questId?S.tasks.find(function(t){return t.id===S.questId&&!t.done;}):null;
-  if(qt){
-    lbl.textContent="Quest: "+qt.text.slice(0,28)+(qt.text.length>28?"…":"");
-    btn.classList.add("pick-quest-active");
-    btn.onclick=function(){setQuest(S.questId);};
-  }else{
-    lbl.textContent="Pick my Quest";
-    btn.classList.remove("pick-quest-active");
-    btn.onclick=pickQuest;
-  }
-}
-
-// ── UNCOMPLETE TASK (undo on done card) ───────────────────────────────────────
-function uncompleteTask(id){
-  var t=S.tasks.find(function(x){return x.id===id;});
-  if(!t||!t.done)return;
-  t.done=false;
-  if(t.freq==="daily"||t.freq==="weekly"||t.freq==="monthly"||t.freq==="biweekly")t.lastDone=null;
-  var wi=S.wins.findIndex(function(w){return w.text===t.text;});
-  if(wi!==-1)S.wins.splice(wi,1);
-  S.allTimeDone=Math.max(0,S.allTimeDone-1);
-  S.todayDone=Math.max(0,S.todayDone-1);
-  save();renderHeader();renderTasks();
-  showToast("↩ Task moved back to active");
-}
-
-// ── KEYBOARD + SCROLL FIX ────────────────────────────────────────────────────
+// ── KEYBOARD RISE FIX ────────────────────────────────────────────────────────
 (function(){
-  function onVPResize(){
-    var overlay=document.getElementById('addSheet');
-    if(!overlay||overlay.style.display==='none')return;
-    var vpH=window.visualViewport?window.visualViewport.height:window.innerHeight;
-    var kbH=Math.max(0,window.innerHeight-vpH-10);
-    overlay.style.paddingBottom=(kbH>80?kbH:0)+'px';
-  }
-  if(window.visualViewport){
-    window.visualViewport.addEventListener('resize',onVPResize);
-  }
-  document.addEventListener('focusin',function(e){
-    if(e.target.closest&&e.target.closest('.add-sheet')){
-      setTimeout(function(){e.target.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
-    }
-  });
+  function onVP(){var o=document.getElementById('addSheet');if(!o||o.style.display==='none')return;var k=Math.max(0,window.innerHeight-(window.visualViewport?window.visualViewport.height:window.innerHeight)-10);o.style.paddingBottom=(k>80?k:0)+'px';}
+  if(window.visualViewport)window.visualViewport.addEventListener('resize',onVP);
+  document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('.add-sheet'))setTimeout(function(){e.target.scrollIntoView({behavior:'smooth',block:'nearest'});},150);});
 })();
-
-// ── DOUBLE-TAP TO COMPLETE (mobile) ──────────────────────────────────────────
+// ── DOUBLE-TAP TO COMPLETE ────────────────────────────────────────────────────
 (function(){
   var _id=null,_t=0,_sx=0,_sy=0,_timer=null;
-  // Record start position so we can ignore scrolls
   document.addEventListener('touchstart',function(e){
-    var t=e.changedTouches[0];
-    _sx=t.clientX;_sy=t.clientY;
-  },{passive:true});
+    var card=e.target.closest&&e.target.closest('.task-card');
+    if(!card)return;
+    if(e.target.closest('button,input,select,textarea,.drag-handle,.steps-area,.card-menu,.menu-btn'))return;
+    _sx=e.changedTouches[0].clientX;_sy=e.changedTouches[0].clientY;
+    e.preventDefault();
+  },{passive:false,capture:true});
   document.addEventListener('touchend',function(e){
     var card=e.target.closest&&e.target.closest('.task-card');
     if(!card)return;
-    // Ignore buttons and interactive children
     if(e.target.closest('button,input,select,textarea,.drag-handle,.steps-area,.card-menu,.menu-btn'))return;
-    // Ignore if finger moved more than 12px (was a scroll, not a tap)
-    var t=e.changedTouches[0];
-    if(Math.abs(t.clientX-_sx)>12||Math.abs(t.clientY-_sy)>12)return;
-    var id=card.id.replace('tc_','');
-    if(!id)return;
+    if(Math.abs(e.changedTouches[0].clientX-_sx)>12||Math.abs(e.changedTouches[0].clientY-_sy)>12)return;
+    var id=card.id.replace('tc_','');if(!id)return;
     var now=Date.now();
     if(_id===id&&now-_t<500){
-      // Second tap within 500ms = double-tap → complete
       clearTimeout(_timer);_id=null;_t=0;
       e.preventDefault();
-      // Brief visual flash so user knows it registered
-      card.style.transition='opacity 0.15s';
-      card.style.opacity='0.4';
+      card.style.transition='opacity 0.12s';card.style.opacity='0.4';
       setTimeout(function(){card.style.opacity='';card.style.transition='';},150);
       if(typeof completeTask==='function')completeTask(id);
-    }else{
-      // First tap — wait for second
-      _id=id;_t=now;
-      clearTimeout(_timer);
-      _timer=setTimeout(function(){_id=null;},550);
-    }
-  },{passive:false});
+    }else{_id=id;_t=now;clearTimeout(_timer);_timer=setTimeout(function(){_id=null;},550);}
+  },{passive:false,capture:true});
 })();
 </script>
 <div class="backup-modal-overlay" id="backupModal" style="display:none" onclick="if(event.target===this)closeBackupModal()"><div class="backup-modal-card"><div class="backup-modal-head"><span>💾 Your data</span><button class="backup-modal-close" onclick="closeBackupModal()">✕</button></div><p class="backup-modal-why">Tasks, XP, and progress are saved <strong>in this browser only</strong>. Clearing cache, switching browser, or changing device will erase everything.</p><p class="backup-modal-how">Save a file to your device and restore it anytime — on any device, any browser.</p><div class="backup-modal-btns"><button class="backup-modal-save" onclick="closeBackupModal();exportBackup()">⬇ Save backup</button><button class="backup-modal-restore" onclick="closeBackupModal();importBackup()">⬆ Restore</button></div><input type="file" id="restoreInput" accept=".json" style="display:none" onchange="handleRestore(this)"/></div></div>
