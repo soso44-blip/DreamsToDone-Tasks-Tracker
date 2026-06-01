@@ -1561,10 +1561,36 @@ function newDay(){
 
 // ── ADD TASK ──────────────────────────────────────────────────────────────────
 function openAdd(){
+  // Always start fresh — never inherit state from a previous edit
+  editingTaskId=null;
+  var title=document.getElementById("sheetTitle");
+  if(title)title.textContent="Add a task";
+  var btn=document.getElementById("addBtn");
+  if(btn){btn.textContent="✅ Add Task";btn.disabled=true;}
+  document.getElementById("addName").value="";
+  var due=document.getElementById("addDue");if(due)due.value="";
+  var st=document.getElementById("addStart");if(st)st.value="";
+  var en=document.getElementById("addEnd");if(en)en.value="";
+  var pr=document.getElementById("addPriority");if(pr)pr.value="normal";
+  if(typeof initAddForm==="function")initAddForm();
   document.getElementById("addSheet").style.display="flex";
-  document.getElementById("addName").focus();
+  setTimeout(function(){document.getElementById("addName").focus();},50);
 }
-function closeAdd(){document.getElementById("addSheet").style.display="none";document.getElementById("addName").value="";}
+function closeAdd(){
+  document.getElementById("addSheet").style.display="none";
+  document.getElementById("addName").value="";
+  // Reset edit state so next "Add" creates a new task
+  editingTaskId=null;
+  var title=document.getElementById("sheetTitle");
+  if(title)title.textContent="Add a task";
+  var btn=document.getElementById("addBtn");
+  if(btn){btn.textContent="✅ Add Task";btn.disabled=true;}
+  // Clear optional fields
+  var due=document.getElementById("addDue");if(due)due.value="";
+  var st=document.getElementById("addStart");if(st)st.value="";
+  var en=document.getElementById("addEnd");if(en)en.value="";
+  var pr=document.getElementById("addPriority");if(pr)pr.value="normal";
+}
 function validateAdd(){document.getElementById("addBtn").disabled=document.getElementById("addName").value.trim().length<2;}
 function initAddForm(){
   const cats=document.getElementById("addCatRow");
